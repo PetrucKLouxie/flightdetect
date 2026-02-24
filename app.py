@@ -86,6 +86,8 @@ folium.Circle(
 flights = get_flights()
 
 # DEBUG
+st.write("USER:", st.secrets.get("OPENSKY_USER"))
+st.write("PASS LENGTH:", len(st.secrets.get("OPENSKY_PASS", "")))
 st.write("Total aircraft detected:", len(flights))
 
 for f in flights:
