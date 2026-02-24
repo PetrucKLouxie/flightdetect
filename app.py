@@ -61,7 +61,11 @@ def get_flights():
 # =========================
 # MAP
 # =========================
-m = folium.Map(location=[JUANDA_LAT, JUANDA_LON], zoom_start=9)
+m = folium.Map(
+    location=[JUANDA_LAT, JUANDA_LON],
+    zoom_start=13,   # makin besar makin zoom dekat
+    control_scale=True
+)
 
 # Marker Juanda
 folium.Marker(
