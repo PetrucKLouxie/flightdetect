@@ -34,7 +34,8 @@ def get_flights():
         )
 
         if r.status_code != 200:
-            st.error(f"API Error: {r.status_code}")
+            st.error(f"API Error Code: {r.status_code}")
+            st.write(r.text)
             return []
 
         data = r.json()
