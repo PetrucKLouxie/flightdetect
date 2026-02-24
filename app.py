@@ -81,7 +81,6 @@ folium.Circle(
 flights = get_flights()
 
 # DEBUG
-data = r.json()
 st.write("RAW STATES:", data.get("states"))
 st.write("USER:", st.secrets.get("OPENSKY_USER"))
 st.write("PASS LENGTH:", len(st.secrets.get("OPENSKY_PASS", "")))
