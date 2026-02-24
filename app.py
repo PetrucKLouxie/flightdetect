@@ -67,6 +67,13 @@ m = folium.Map(
     control_scale=True
 )
 
+folium.Circle(
+    location=[JUANDA_LAT, JUANDA_LON],
+    radius=30000,  # 30 km
+    color="red",
+    fill=False
+).add_to(m)
+
 # Marker Juanda
 folium.Marker(
     [JUANDA_LAT, JUANDA_LON],
