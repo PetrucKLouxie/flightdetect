@@ -20,12 +20,7 @@ LON_MAX = 116
 
 @st.cache_data(ttl=30)
 def get_flights():
-    url = (
-        "https://opensky-network.org/api/states/all"
-        f"?lamin={LAT_MIN}&lomin={LON_MIN}"
-        f"&lamax={LAT_MAX}&lomax={LON_MAX}"
-    )
-
+    url = "https://opensky-network.org/api/states/all"
     try:
         r = requests.get(
             url,
@@ -86,6 +81,8 @@ folium.Circle(
 flights = get_flights()
 
 # DEBUG
+data = r.json()
+st.write("RAW STATES:", data.get("states"))
 st.write("USER:", st.secrets.get("OPENSKY_USER"))
 st.write("PASS LENGTH:", len(st.secrets.get("OPENSKY_PASS", "")))
 st.write("Total aircraft detected:", len(flights))
