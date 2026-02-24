@@ -69,7 +69,7 @@ m = folium.Map(
 
 folium.Circle(
     location=[JUANDA_LAT, JUANDA_LON],
-    radius=30000,  # 30 km
+    radius=3000,  # 30 km
     color="red",
     fill=False
 ).add_to(m)
